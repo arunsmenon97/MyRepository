@@ -1,0 +1,14 @@
+<aura:component controller="AccountController" implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="recentAccounts" type="Account[]" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <div class="slds-box">
+        <h2>Recent Accounts</h2>
+        <ul>
+            <aura:iteration items="{!v.recentAccounts}" var="account">
+                <li>{!account.Name} (Created on {!account.CreatedDate})</li>
+            </aura:iteration>
+        </ul>
+    </div>
+</aura:component>
